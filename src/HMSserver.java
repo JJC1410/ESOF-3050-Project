@@ -16,7 +16,7 @@ import common.*;
  * @author Paul Holden
  * @version July 2000
  */
-public class EchoServer extends AbstractServer 
+public class HMSserver extends AbstractServer 
 {
   //Class variables *************************************************
   
@@ -39,7 +39,7 @@ public class EchoServer extends AbstractServer
    *
    * @param port The port number to connect on.
    */
-  public EchoServer(int port) 
+  public HMSserver(int port) 
   {
     super(port);
   }
@@ -50,7 +50,7 @@ public class EchoServer extends AbstractServer
    * @param port The port number to connect on.
    * @param serverUI The interface type variable.
    */
-  public EchoServer(int port, ChatIF serverUI) throws IOException
+  public HMSserver(int port, ChatIF serverUI) throws IOException
   {
     super(port);
     this.serverUI = serverUI;
@@ -295,7 +295,7 @@ public class EchoServer extends AbstractServer
       port = DEFAULT_PORT; //Set port to 5555
     }
 	
-    EchoServer sv = new EchoServer(port);
+    HMSserver sv = new HMSserver(port);
     
     try 
     {
