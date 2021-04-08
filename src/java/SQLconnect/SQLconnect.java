@@ -1,33 +1,26 @@
 package java.SQLconnect;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class SQLconnect 
 {
 	  @SuppressWarnings("unused")
-	public static void main(String[] args) 
+	  public static void main(String[] args) throws InstantiationException, IllegalAccessException 
 	  {
 		  Connection connection = null;
 		  try
 		  {
-			  String driverName = "com.jnetdirect.jsql.JSQLDriver";
+			  String driverName = "jdbc";
 			 
-			  Class.forName(driverName);
+			  Class.forName(driverName).newInstance();
 		 
 			  String serverName = "localhost";
-			 
-			  String serverPort = "1433";
-			 
+			  String serverPort = "3306";
 			  String database = serverName + ":" + serverPort;
-			 
-			  String url = "jdbc:JSQLConnect://" + database;
-			 
-			  String username = "username";
-			 
-			  String password = "password";
-			 
+			  String url = "Mysqlf://" + database;
+			  String username = "root";
+			  String password = "Password";
+			  
 			  connection = DriverManager.getConnection(url, username, password);
 			 
 			  System.out.println("Successfully Connected to the database!");
@@ -41,5 +34,6 @@ public class SQLconnect
 			  {
 			  System.out.println("Could not connect to the database " + e.getMessage());
 			  }
+		  
 		 }
 }
